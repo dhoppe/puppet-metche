@@ -1,0 +1,8 @@
+---
+metche::config_file_template: 'metche/common/etc/metche.conf.erb'
+metche::config_file_hash:
+  'metche':
+    config_file_path:   '/etc/cron.d/metche'
+    config_file_mode:   '0644'
+    config_file_source: 'puppet:///modules/metche/common/etc/cron.d/metche'
+metche::email: "admin@%{::domain}"
