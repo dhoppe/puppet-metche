@@ -1,0 +1,7 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# /etc/puppet/environments/production/modules/metche/files/common/etc/cron.d/metche
+#
+
+# metche
+0-59/5 * * * * root test -x /usr/sbin/metche && /usr/sbin/metche cron

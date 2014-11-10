@@ -1,0 +1,111 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# <%= file %>
+#
+
+#######################################################################
+#
+# metche configuration
+#
+
+# Directory watched by metche
+WATCHED_DIR="/etc"
+
+# Directory containing backups
+BACKUP_DIR="/var/lib/metche"
+
+# Activate single changelog file monitoring
+#CHANGELOG_FILE="/root/Changelog"
+
+# Activate multiple changelogs file monitoring.
+# Each "Changelog" should be in a sub-directory of CHANGELOG_DIR.
+# (Override CHANGELOG_FILE if both are set)
+#CHANGELOG_DIR="/root/changelogs"
+
+# Debian packages monitoring (need apt-show-versions)
+DO_PACKAGES="yes"
+
+# Show diff details for modified files
+# WARNING! This can send sensitive data by e-mail if not used with encryption.
+DO_DETAILS="yes"
+
+# Minutes until unstable goes to testing
+TESTING_TIME="60"
+
+# Days until testing goes to stable
+STABLE_TIME="3"
+
+# Address receiving testing changes report
+EMAIL_ADDRESS="<%= email %>"
+
+# Encrypt emails with GnuPG ? (uncomment next line to do so)
+#ENCRYPT_EMAIL="yes"
+
+# Email $EMAIL_ADDRESS after saving a stable state
+SEND_STABLE_REPORTS="yes"
+
+# Filename patterns to ignore (space-separated list)
+# GNU tar --exclude pattern matching rules are used:
+#   - If a pattern matches a directory, all the files beneath it are
+#     recursively excluded.
+#   - Periods (`.') or forward slashes (`/') are not considered special for
+#     wildcard matches.
+#
+# Known cases where excludes are needed:
+#   - "resolv.conf" when using resolvconf,
+#   - "printcap" when cups browsing feature are used.
+#
+# Example (default value):
+EXCLUDES=".git _darcs .svn .bzr CVS .hg _FOSSIL_ \
+          *.swp #* *~ *.gpg *.key ifstate adjtime ld.so.cache shadow* \
+          .cache .gnupg blkid.tab* aumixrc net.enable mtab backup.d \
+          vdirbase run.rev vdir run.rev \
+          prng_exch smtp_scache.pag smtpd_scache.pag \
+          smtp_scache.dir smtpd_scache.dir local.sh \
+          ssh_host_dsa_key* ssh_host_rsa_key*"
+
+# Locale (will be used to feed LC_ALL)
+# Warning: values different from "C" are untested.
+LOCALE="C"
+
+# Set this to yes to get more debugging output.
+DEBUG="no"
+
+#######################################################################
+#
+# Linux VServers configuration
+#
+
+# VServers to monitor (space-separated list)
+# The host system is monitored, whatever VSERVERS is set to.
+# Set VSNAMES to "all" in order to monitor all VServers.
+#VSNAMES=""
+#VSNAMES="name1 name2"
+#VSNAMES="all"
+
+# vserver-info command location (default: /usr/sbin/vserver-info)
+#VSERVERINFO=/usr/sbin/vserver-info
+
+# vserver command location (default: /usr/sbin/vserver)
+#VSERVER=/usr/sbin/vserver
+
+# Directory where the VServers live; example: a VServer called "twiki"
+# will have its root directory in $VROOTDIR/twiki
+# (default: /var/lib/vservers)
+#VROOTDIR=/var/lib/vservers
+
+#######################################################################
+#
+# Localizable strings
+#
+
+# Add your custom headers below
+
+#_MAIL_SUBJECT="changes report"
+#_NO_DEBIAN_PACKAGES_CHANGE="No change in Debian packages state."
+#_NO_CHANGE="No change."
+#MAIN_HEADER=""
+#CHANGELOGS_HEADER=""
+#FILES_HEADER=""
+#DEBIAN_PACKAGES_HEADER=""
+#FILES_DETAILS_HEADER=""
