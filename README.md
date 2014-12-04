@@ -252,7 +252,7 @@ Determines which parameters should be passed to an ERB template. Defaults to '{}
 
 #### `email`
 
-Determines which email address should be notified about config or package changes. Defaults to 'metche@${::domain}'.
+Determines which email address should be notified about config or package changes. Defaults to "metche@${::domain}".
 
 ## Limitations
 
