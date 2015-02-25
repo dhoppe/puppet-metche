@@ -1,6 +1,6 @@
 {
   "name": "dhoppe-metche",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Dennis Hoppe",
   "summary": "This module installs and configures the Metche package.",
   "license": "Apache 2.0",
