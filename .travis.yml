@@ -3,13 +3,6 @@ language: ruby
 bundler_args: --without system_tests --jobs 3 --retry 3
 script: "bundle exec rake validate && bundle exec rake lint && bundle exec rake spec SPEC_OPTS='--format documentation'"
 sudo: false
-after_success:
-  - git clone -q git://github.com/puppetlabs/ghpublisher.git .forge-releng
-  - .forge-releng/publish
-env:
-  global:
-  - PUBLISHER_LOGIN=dhoppe
-  - secure: "tByB0sAtTdsMtBzulGVdNzDov5Wuubn3CuEa4UjUd+WugoMh94d4WtIwo8k76IyK/KL5p8LkfIFS88JFRTQMp+jmA0TkEaoutXbJDJHVjiciqYXaf0L9x6lBE3hNSTvaxL+s7cixsU58ez2YOYKIkju65g2fUfTAxnHFQIKRFRc="
 matrix:
   fast_finish: true
   include:
