@@ -11,6 +11,7 @@ describe 'metche::define', :type => :define do
     context "on #{osfamily}" do
       context 'when source file' do
         let(:params) {{
+          :config_file_path   => '/etc/metche.2nd.conf',
           :config_file_source => 'puppet:///modules/metche/common/etc/metche.conf',
         }}
 
@@ -25,6 +26,7 @@ describe 'metche::define', :type => :define do
 
       context 'when content string' do
         let(:params) {{
+          :config_file_path   => '/etc/metche.3rd.conf',
           :config_file_string => '# THIS FILE IS MANAGED BY PUPPET',
         }}
 
@@ -39,6 +41,7 @@ describe 'metche::define', :type => :define do
 
       context 'when content template' do
         let(:params) {{
+          :config_file_path     => '/etc/metche.4th.conf',
           :config_file_template => 'metche/common/etc/metche.conf.erb',
         }}
 
@@ -53,6 +56,7 @@ describe 'metche::define', :type => :define do
 
       context 'when content template (custom)' do
         let(:params) {{
+          :config_file_path         => '/etc/metche.5th.conf',
           :config_file_template     => 'metche/common/etc/metche.conf.erb',
           :config_file_options_hash => {
             'key' => 'value',
