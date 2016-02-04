@@ -3,7 +3,6 @@ require 'spec_helper_acceptance'
 case fact('osfamily')
 when 'Debian'
   package_name     = 'metche'
-  config_dir_path  = '/etc'
   config_file_path = '/etc/metche.conf'
 end
 

@@ -17,9 +17,9 @@ describe 'metche', :type => :class do
       describe 'metche::install' do
         context 'defaults' do
           it do
-            is_expected.to contain_package('metche').with({
+            is_expected.to contain_package('metche').with(
               'ensure' => 'present',
-            })
+            )
           end
         end
 
@@ -29,9 +29,9 @@ describe 'metche', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('metche').with({
+            is_expected.to contain_package('metche').with(
               'ensure' => 'latest',
-            })
+            )
           end
         end
 
@@ -41,15 +41,15 @@ describe 'metche', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('metche').with({
+            is_expected.to contain_package('metche').with(
               'ensure' => 'absent',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('metche.conf').with({
+            is_expected.to contain_file('metche.conf').with(
               'ensure'  => 'present',
               'require' => 'Package[metche]',
-            })
+            )
           end
         end
 
@@ -59,15 +59,15 @@ describe 'metche', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('metche').with({
+            is_expected.to contain_package('metche').with(
               'ensure' => 'purged',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('metche.conf').with({
+            is_expected.to contain_file('metche.conf').with(
               'ensure'  => 'absent',
               'require' => 'Package[metche]',
-            })
+            )
           end
         end
       end
@@ -75,10 +75,10 @@ describe 'metche', :type => :class do
       describe 'metche::config' do
         context 'defaults' do
           it do
-            is_expected.to contain_file('metche.conf').with({
+            is_expected.to contain_file('metche.conf').with(
               'ensure'  => 'present',
               'require' => 'Package[metche]',
-            })
+            )
           end
         end
 
@@ -88,14 +88,14 @@ describe 'metche', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('metche.dir').with({
+            is_expected.to contain_file('metche.dir').with(
               'ensure'  => 'directory',
               'force'   => false,
               'purge'   => false,
               'recurse' => true,
               'source'  => 'puppet:///modules/metche/common/etc',
               'require' => 'Package[metche]',
-            })
+            )
           end
         end
 
@@ -106,14 +106,14 @@ describe 'metche', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('metche.dir').with({
+            is_expected.to contain_file('metche.dir').with(
               'ensure'  => 'directory',
               'force'   => true,
               'purge'   => true,
               'recurse' => true,
               'source'  => 'puppet:///modules/metche/common/etc',
               'require' => 'Package[metche]',
-            })
+            )
           end
         end
 
@@ -123,11 +123,11 @@ describe 'metche', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('metche.conf').with({
+            is_expected.to contain_file('metche.conf').with(
               'ensure'  => 'present',
               'source'  => 'puppet:///modules/metche/common/etc/metche.conf',
               'require' => 'Package[metche]',
-            })
+            )
           end
         end
 
@@ -137,11 +137,11 @@ describe 'metche', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('metche.conf').with({
+            is_expected.to contain_file('metche.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[metche]',
-            })
+            )
           end
         end
 
@@ -151,11 +151,11 @@ describe 'metche', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('metche.conf').with({
+            is_expected.to contain_file('metche.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[metche]',
-            })
+            )
           end
         end
 
@@ -168,11 +168,11 @@ describe 'metche', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('metche.conf').with({
+            is_expected.to contain_file('metche.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'require' => 'Package[metche]',
-            })
+            )
           end
         end
       end
