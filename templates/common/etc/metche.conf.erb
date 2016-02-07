@@ -36,7 +36,7 @@ TESTING_TIME="60"
 STABLE_TIME="3"
 
 # Address receiving testing changes report
-EMAIL_ADDRESS="<%= scope.lookupvar('::metche::email') %>"
+EMAIL_ADDRESS="<%= scope['::metche::email'] %>"
 
 # Encrypt emails with GnuPG ? (uncomment next line to do so)
 #ENCRYPT_EMAIL="yes"

@@ -16,11 +16,11 @@ describe 'metche::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_metche.conf').with({
+          is_expected.to contain_file('define_metche.conf').with(
             'ensure'  => 'present',
             'source'  => 'puppet:///modules/metche/common/etc/metche.conf',
             'require' => 'Package[metche]',
-          })
+          )
         end
       end
 
@@ -31,11 +31,11 @@ describe 'metche::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_metche.conf').with({
+          is_expected.to contain_file('define_metche.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => 'Package[metche]',
-          })
+          )
         end
       end
 
@@ -46,11 +46,11 @@ describe 'metche::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_metche.conf').with({
+          is_expected.to contain_file('define_metche.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => 'Package[metche]',
-          })
+          )
         end
       end
 
@@ -64,11 +64,11 @@ describe 'metche::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_metche.conf').with({
+          is_expected.to contain_file('define_metche.conf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'require' => 'Package[metche]',
-          })
+          )
         end
       end
     end
