@@ -1,21 +1,19 @@
 require 'spec_helper'
 
 describe 'metche', type: :class do
-  ['Debian'].each do |osfamily|
-    let(:facts) do
-      {
-        osfamily: osfamily
-      }
-    end
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) do
+        facts
+      end
 
-    it { is_expected.to compile.with_all_deps }
-    it { is_expected.to contain_anchor('metche::begin') }
-    it { is_expected.to contain_class('metche::params') }
-    it { is_expected.to contain_class('metche::install') }
-    it { is_expected.to contain_class('metche::config') }
-    it { is_expected.to contain_anchor('metche::end') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_anchor('metche::begin') }
+      it { is_expected.to contain_class('metche::params') }
+      it { is_expected.to contain_class('metche::install') }
+      it { is_expected.to contain_class('metche::config') }
+      it { is_expected.to contain_anchor('metche::end') }
 
-    context "on #{osfamily}" do
       describe 'metche::install' do
         context 'defaults' do
           it do
