@@ -1,10 +1,11 @@
 # metche
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-metche.png?branch=master)](https://travis-ci.org/dhoppe/puppet-metche)
+[![Code Coverage](https://coveralls.io/repos/github/dhoppe/puppet-metche/badge.svg?branch=master)](https://coveralls.io/github/dhoppe/puppet-metche)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/metche.svg)](https://forge.puppetlabs.com/dhoppe/metche)
-[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/metche.svg)](https://forge.puppetlabs.com/dhoppe/metche)
-[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
-[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/dhoppe/metche.svg)](https://forge.puppetlabs.com/dhoppe/metche)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/dhoppe/metche.svg)](https://forge.puppetlabs.com/dhoppe/metche)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/dhoppe/metche.svg)](https://forge.puppetlabs.com/dhoppe/metche)
 
 #### Table of Contents
 
